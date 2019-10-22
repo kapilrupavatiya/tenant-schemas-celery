@@ -47,8 +47,8 @@ def switch_schema(task, kwargs, **kw):
     if schema == get_public_schema_name():
         return
 
-    tenant = get_tenant_model().objects.get(schema_name=schema)
-    connection.set_tenant(tenant, include_public=True)
+    #tenant = get_tenant_model().objects.get(schema_name=schema)
+    connection.set_schema(schema, include_public=True)
 
 
 def restore_schema(task, **kwargs):
